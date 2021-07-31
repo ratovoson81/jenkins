@@ -3,6 +3,9 @@ pipeline {
     tools {
     nodejs 'node'
   }
+  environment {
+    CI = 'true' 
+  }
   stages {
     stage('Startup') {
       steps {
@@ -12,9 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        script {
           bat 'npm start'
-        }
       }
     }
   }
