@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        bat 'npm test a'
+        bat 'npx jest'
       }
     }
     stage('Build') {
