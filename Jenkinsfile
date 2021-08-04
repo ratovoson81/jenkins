@@ -18,7 +18,7 @@ pipeline {
       }
       post {
         always {
-          junit 'output/coverage/junit.xml'
+          junit 'junit.xml'
         }
       }      
     }
