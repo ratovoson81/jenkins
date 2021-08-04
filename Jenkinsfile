@@ -14,13 +14,8 @@ pipeline {
     }
     stage('Test') {
       steps {
-        bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
-      }
-      post {
-        always {
-          junit 'output/coverage/junit/junit.xml'
-        }
-      }      
+        bat 'npx jest'
+      }     
     }
     stage('Build') {
       steps {
