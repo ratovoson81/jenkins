@@ -40,18 +40,9 @@
     "jest-junit": "^12.2.0"
   },
   "jest": {
-    "coverageDirectory": "src/",
     "coverageReporters": [
       "text",
       "cobertura"
-    ],
-    "reporters": [
-      "default",
-      "jest-junit"
     ]
-  },
-  "jest-junit": {
-    "outputDirectory": "src/",
-    "usePathForSuiteName": "true"
   }
 }
