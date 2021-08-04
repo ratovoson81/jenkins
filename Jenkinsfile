@@ -7,11 +7,7 @@ pipeline {
     CI = 'true' 
   }
   stages {
-    stage('Startup') {
-      steps {
-        bat 'npm install'
-      }
-    }
+
     stage('Test') {
       steps {
         bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
@@ -22,10 +18,6 @@ pipeline {
         }
       }     
     }
-    stage('Build') {
-      steps {
-          bat 'npm start'
-      }
-    }
+
   }
 }
