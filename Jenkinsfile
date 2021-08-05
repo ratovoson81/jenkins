@@ -7,7 +7,7 @@ pipeline {
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
-      script: "git show -s --format='%an' HEAD",
+      bat: "git show -s --format='%%an' HEAD",
       returnStdout: true
     ).split('\r\n')[2].trim()
   }
