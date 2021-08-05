@@ -10,7 +10,6 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        bat 'env'
         echo bat(script: 'env|sort', returnStdout: true)
         bat set
       }
