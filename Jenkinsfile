@@ -11,7 +11,7 @@ pipeline {
       returnStdout: true
     ).split('\r\n')[2].trim()
     AUTHOR_EMAIL = bat (
-      script: "git show -s --format='%%ae' HASH",
+      script: "git show ${env.GIT_COMMIT} | grep Author",
       returnStdout: true
     )
   }
