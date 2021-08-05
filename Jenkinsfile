@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     CI = 'true' 
-    URL_GIT_COMMIT = '${env.GIT_URL%.*}'
+    URL_GIT_COMMIT = env.GIT_URL%.*
   }
   stages {
     stage('Startup') {
