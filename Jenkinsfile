@@ -7,10 +7,10 @@ pipeline {
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
-      script: "git log -1 --pretty=%an ${env.GIT_COMMIT}", 
+      script: "git log -1 --pretty=%%an ${env.GIT_COMMIT}", 
       returnStdout: true).trim()
     AUTHOR_EMAIL = bat (
-      script: "git log -1 --pretty=%ae ${env.GIT_COMMIT}",
+      script: "git log -1 --pretty=%%ae ${env.GIT_COMMIT}",
       returnStdout: true
     )
   }
