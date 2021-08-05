@@ -7,11 +7,11 @@ pipeline {
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
-      script: "git show -s --format='%%an' HEAD",
+      script: "git show ${env.GIT_COMMIT} | grep Author",
       returnStdout: true
     ).split('\r\n')[2].trim()
     AUTHOR_EMAIL = bat (
-      script: "git show -s --format='%%ae' HASH^!",
+      script: "git show -s --format='%%ae' HASH",
       returnStdout: true
     )
   }
