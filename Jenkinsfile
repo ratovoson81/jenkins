@@ -10,8 +10,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
-        echo env
+                echo env
       }
       post {
         always {
