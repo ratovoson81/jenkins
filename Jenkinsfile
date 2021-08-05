@@ -9,9 +9,9 @@ pipeline {
     AUTHOR_NAME = bat (
       script: "git show -s --format='%%an' HEAD",
       returnStdout: true
-    )
+    ).split('\r\n')[2].trim()
     AUTHOR_EMAIL = bat (
-      script: "git show -s --format='%%ae' HEAD",
+      script: "git show -s --format='%%ae' HASH^!",
       returnStdout: true
     )
   }
