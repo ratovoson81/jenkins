@@ -8,11 +8,11 @@ pipeline {
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
       script: "git log -1 --pretty=%%an ${env.GIT_COMMIT}", 
-      returnStdout: true).trim()
+      returnStdout: true).split('\r\n')[2].trim()
     AUTHOR_EMAIL = bat (
       script: "git log -1 --pretty=%%ae ${env.GIT_COMMIT}",
       returnStdout: true
-    )
+    ).split('\r\n')[2].trim()
   }
   stages {
     stage('Test') {
