@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-                echo env
+                echo env.GIT_COMMIT
       }
       post {
         always {
