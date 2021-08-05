@@ -10,7 +10,10 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-                echo env.GIT_COMMIT
+        bat 'printenv'
+        echo bat(script: 'env|sort', returnStdout: true)
+        bat set
+        bat 'env'
       }
       post {
         always {
