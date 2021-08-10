@@ -36,7 +36,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo USERNAME
           bat "git config user.name ${AUTHOR_NAME}"
           bat "git config user.email ${AUTHOR_EMAIL}"
