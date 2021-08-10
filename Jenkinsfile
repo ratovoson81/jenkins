@@ -4,6 +4,7 @@ pipeline {
     nodejs 'node'
   }
   environment {
+    USER_CREDENTIALS = credentials('USER_PASSWORD')
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
@@ -36,7 +37,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        echo "${USER_PASSWORD}"
+        echo "${$USER_CREDENTIALS_USR}"
         bat "git config user.name ${AUTHOR_NAME}"
         bat "git config user.email ${AUTHOR_EMAIL}"
         bat 'git checkout master'
