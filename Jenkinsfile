@@ -4,7 +4,6 @@ pipeline {
     nodejs 'node'
   }
   environment {
-    USER_CREDENTIALS = credentials('usernamePassword')
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
@@ -37,13 +36,15 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        echo "${$USER_CREDENTIALS_USR}"
-        bat "git config user.name ${AUTHOR_NAME}"
-        bat "git config user.email ${AUTHOR_EMAIL}"
-        bat 'git checkout master'
-        bat 'git pull origin master'
-        bat 'git merge origin/dev'
-        bat("git push https://github.com/ratovoson81/jenkins.git")
+        withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+          echo USERNAME
+          bat "git config user.name ${AUTHOR_NAME}"
+          bat "git config user.email ${AUTHOR_EMAIL}"
+          bat 'git checkout master'
+          bat 'git pull origin master'
+          bat 'git merge origin/dev'
+          bat("git push https://github.com/ratovoson81/jenkins.git")
+        }
       }
     }
   }
