@@ -52,5 +52,10 @@
       "text",
       "cobertura"
     ]
+  },
+  "jest-junit": {
+    "outputDirectory": "output/coverage/junit",
+    "outputName": "junit.xml",
+    "usePathForSuiteName": "true"
   }
 }
