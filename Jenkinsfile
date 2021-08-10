@@ -34,14 +34,14 @@ pipeline {
          }
       }     
     }
-    stage('Release') {
+    stage('Publish') {
       steps {
         bat "git config user.name ${AUTHOR_NAME}"
         bat "git config user.email ${AUTHOR_EMAIL}"
         bat 'git checkout master'
         bat 'git pull origin master'
         bat 'git merge origin/dev'
-        bat 'git push --set-upstream origin master'
+        bat("git push https://github.com/ratovoson81/jenkins.git")
       }
     }
   }
