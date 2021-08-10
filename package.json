@@ -54,7 +54,7 @@
     ]
   },
   "jest-junit": {
-    "output": "output/coverage/junit/junit.xml",
+    "output": "junit.xml",
     "usePathForSuiteName": "true"
   }
 }
