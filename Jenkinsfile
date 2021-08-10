@@ -41,7 +41,7 @@ pipeline {
         bat 'git checkout master'
         bat 'git pull origin master'
         bat 'git merge origin/dev'
-        bat 'git push'
+        bat "git push ${env.GIT_URL} master"
       }
     }
   }
