@@ -34,5 +34,13 @@ pipeline {
          }
       }     
     }
+    stage('Release') {
+      steps {
+        git branch: 'master', url: 'git@github.com:ratovoson81/jenkins.git'
+        bat 'git pull origin master'
+        bat 'git merge dev'
+        bat 'git push origin master'
+      }
+    }
   }
 }
