@@ -4,7 +4,7 @@ pipeline {
     nodejs 'node'
   }
   environment {
-    USER_CREDENTIALS = credentials('PASSWORD')
+    USER_CREDENTIALS = credentials('password')
     CI = 'true' 
     URL_GIT_COMMIT = "https://github.com/ratovoson81/jenkins"
     AUTHOR_NAME = bat (
