@@ -37,13 +37,12 @@ pipeline {
     stage('Publish') {
       steps {
         withCredentials([usernamePassword(credentialsId: '3f860a36-896c-46c2-8448-fbc79010a203', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-          echo USERNAME
           bat "git config user.name ${AUTHOR_NAME}"
           bat "git config user.email ${AUTHOR_EMAIL}"
           bat 'git checkout master'
           bat 'git pull origin master'
           bat 'git merge origin/dev'
-          bat("git push https://github.com/ratovoson81/jenkins.git")
+          bat("git push https://${USERNAME}:${PASSWORD}github.com/ratovoson81/jenkins.git")
         }
       }
     }
