@@ -36,7 +36,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        echo "${GIT_USERNAME}f${GIT_PASSWORD}"
+        echo "${env.GIT_USERNAME}f${env.GIT_PASSWORD}"
         bat "git config user.name ${AUTHOR_NAME}"
         bat "git config user.email ${AUTHOR_EMAIL}"
         bat 'git checkout master'
