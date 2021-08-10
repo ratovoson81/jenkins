@@ -36,6 +36,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
+        bat 'git branch'
         bat "git config user.name ${AUTHOR_NAME}"
         bat "git config user.email ${AUTHOR_EMAIL}"
         bat 'git checkout master'
