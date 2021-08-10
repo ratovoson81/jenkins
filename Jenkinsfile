@@ -17,9 +17,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        withSonarQubeEnv('My SonarQube Server') {
-          bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
-        }
+        bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
       }
       post {
         always {
