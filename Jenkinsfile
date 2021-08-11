@@ -40,7 +40,6 @@ pipeline {
           bat "git config user.name ${AUTHOR_NAME}"
           bat "git config user.email ${AUTHOR_EMAIL}"
           bat 'git checkout master'
-          bat 'git pull origin master'
           bat 'git merge origin/dev'
           bat("git push https://${USERNAME}:${PASSWORD}@github.com/ratovoson81/jenkins.git")
         }
