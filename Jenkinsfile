@@ -13,6 +13,7 @@ pipeline {
       script: "git log -1 --pretty=%%ae ${env.GIT_COMMIT}",
       returnStdout: true
     ).split('\r\n')[2].trim()
+    failedTests = testResultAction.getResult().getFailedTests().collect { it.getTitle() }
   }
   stages {
     stage('Startup') {
@@ -23,7 +24,6 @@ pipeline {
     stage('Test') {
       steps {
         bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
-        def failedTests = testResultAction.getResult().getFailedTests().collect { it.getTitle() }
         echo "${failedTests}"
       }
       post {
