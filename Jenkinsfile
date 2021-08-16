@@ -40,6 +40,7 @@ pipeline {
           bat "git config user.name ${AUTHOR_NAME}"
           bat "git config user.email ${AUTHOR_EMAIL}"
           bat 'git checkout master'
+          bat 'git pull origin master'
           bat 'git merge origin/dev'
         }
       }
@@ -47,7 +48,7 @@ pipeline {
     stage('Publish') {
       steps {
         withCredentials([string(credentialsId: 'PAT-github', variable: 'SECRET')]) {
-          bat('git push https://$SECRET@github.com/ratovoson81/jenkins.git')
+          bat("git push https://${SECRET}@github.com/ratovoson81/jenkins.git")
         }
       }
     }
