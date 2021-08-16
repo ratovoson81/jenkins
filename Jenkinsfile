@@ -34,14 +34,20 @@ pipeline {
          }
       }     
     }
-    stage('Publish') {
+    stage('Release') {
       steps {
         withCredentials([usernamePassword(credentialsId: '3f860a36-896c-46c2-8448-fbc79010a203', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           bat "git config user.name ${AUTHOR_NAME}"
           bat "git config user.email ${AUTHOR_EMAIL}"
           bat 'git checkout master'
           bat 'git merge origin/dev'
-          bat('git push origin/master')
+        }
+      }
+    }
+    stage('Publish') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'PAT-github', variable: 'SECRET')]) {
+          bat("git push https://${SECRET}@github.com/ratovoson81/jenkins.git")
         }
       }
     }
