@@ -47,6 +47,7 @@ pipeline {
     stage('Publish') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'PAT-github', variable: 'SECRET')]) {
+          echo "${SECRET}"
           bat("git push https://${SECRET}@github.com/ratovoson81/jenkins.git")
         }
       }
