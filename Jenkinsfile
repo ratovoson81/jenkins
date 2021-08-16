@@ -24,6 +24,8 @@ pipeline {
       steps {
         bat 'npx jest --coverage --coverageDirectory=output/coverage/jest'
       }
+      def failedTests = testResultAction.getResult().getFailedTests().collect { it.getTitle() }
+      echo "${failedTests}"
       post {
         always {
           step([$class: 'CoberturaPublisher', coberturaReportFile: 'output/coverage/jest/cobertura-coverage.xml'])
