@@ -55,9 +55,8 @@ pipeline {
     stage('Deploy') {
       steps {
           bat 'npm run build'
-          bat 'npm install netlify-cli --save-dev'
-          bat(script: "netlify")
-          bat(script: "netlify deploy --dir=build --prod")
+          bat(script: "npx netlify")
+          bat(script: "npx netlify deploy --dir=build --prod")
       }
     }
   }
