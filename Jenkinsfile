@@ -15,7 +15,7 @@ pipeline {
     ).split('\r\n')[2].trim()
   }
   stages {
-    stage('Startup') {
+    stage('Build') {
       steps {
         bat 'npm install'
       }
@@ -34,7 +34,7 @@ pipeline {
          }
       }     
     }
-    stage('Release') {
+    stage('Integrate') {
       steps {
         withCredentials([usernamePassword(credentialsId: '3f860a36-896c-46c2-8448-fbc79010a203', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           bat "git config user.name ${AUTHOR_NAME}"
@@ -45,10 +45,19 @@ pipeline {
         }
       }
     }
-    stage('Publish') {
+    stage('Release') {
       steps {
         withCredentials([string(credentialsId: 'PAT-github', variable: 'SECRET')]) {
           bat("git push https://${SECRET}@github.com/ratovoson81/jenkins.git")
+        }
+      }
+    }
+    stage('Deploy') {
+      steps {
+        steps {
+          bat 'npm install netlify-cli -g'
+          bat 'npm run build'
+          bat 'netlify deploy --dir=build --prod'
         }
       }
     }
