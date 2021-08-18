@@ -56,6 +56,7 @@ pipeline {
       steps {
           bat 'npm install netlify-cli -g'
           bat 'npm run build'
+          bat 'netlify'
           bat("netlify deploy --dir=build --prod")
       }
     }
