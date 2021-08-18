@@ -55,8 +55,8 @@ pipeline {
     stage('Deploy') {
       steps {
           bat 'npm run build'
-          bat 'netlify'
-          bat("netlify deploy --dir=build --prod")
+          bat(script: "netlify")
+          bat(script: "netlify deploy --dir=build --prod")
       }
     }
   }
