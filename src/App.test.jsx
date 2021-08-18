@@ -6,6 +6,6 @@ const { render } = require("@testing-library/react");
 
 test("renders learn react link", () => {
   render(<App />);
-  const linkElement = screen.getByText("Jenkins");
+  const linkElement = screen.getByText("Jenkins succes");
   expect(linkElement).toBeInTheDocument();
 });
