@@ -7,6 +7,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "jest-svg-transformer": "^1.0.0",
+    "jest-transform-css": "^2.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -63,7 +65,12 @@
       "text",
       "clover",
       "cobertura"
-    ]
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer",
+      "^.+\\.css$": "jest-transform-css"
+    }
   },
   "jest-junit": {
     "outputDirectory": "output/coverage/junit",
