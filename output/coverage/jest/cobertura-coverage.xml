@@ -1,20 +1,20 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="11" lines-covered="1" line-rate="0.0909" branches-valid="4" branches-covered="0" branch-rate="0" timestamp="1628584079431" complexity="0" version="0.1">
+<coverage lines-valid="11" lines-covered="1" line-rate="0.0909" branches-valid="4" branches-covered="0" branch-rate="0" timestamp="1630237843928" complexity="0" version="0.1">
   <sources>
-    <source>C:\Users\ratov\OneDrive\Bureau\jenkins\jenkins</source>
+    <source>D:\Projets\2021\mémoire M2\jenkins</source>
   </sources>
   <packages>
     <class name="App.js" filename="src\App.js" line-rate="1" branch-rate="1">
       <methods>
-        <method name="App" hits="1" signature="()V">
+        <method name="App" hits="2" signature="()V">
           <lines>
-            <line number="5" hits="1"/>
+            <line number="5" hits="2"/>
           </lines>
         </method>
       </methods>
       <lines>
-        <line number="6" hits="1" branch="false"/>
+        <line number="6" hits="2" branch="false"/>
       </lines>
     </class>
     <class name="index.js" filename="src\index.js" line-rate="0" branch-rate="1">
@@ -49,7 +49,7 @@
         <line number="8" hits="0" branch="false"/>
       </lines>
     </class>
-    <class name="setupTests.js" filename="src\setupTests.js" line-rate="1" branch-rate="1">
+    <class name="setupTests.js" filename="src\setupTests.js" line-rate="0" branch-rate="0">
       <methods>
       </methods>
       <lines>
