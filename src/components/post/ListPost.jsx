@@ -20,7 +20,10 @@ const ListPost = () => {
   return (
     <>
       {posts.length === 0 && (
-        <div className="flex justify-center items-center mt-32">
+        <div
+          className="flex justify-center items-center mt-32"
+          data-testid="loading-post"
+        >
           <SpinnerCircular size="75" color="black" />
         </div>
       )}
@@ -28,10 +31,14 @@ const ListPost = () => {
         <div key={i} className="flex justify-center">
           <div className="flex flex-col justify-center w-2/3 mt-8 border border-gray-100 bg-gray-100 rounded-lg">
             <div className="mt-4 flex items-center justify-center ml-8 mx-8">
-              <p className="text-black font-semibold">{item.title}</p>
+              <p className="text-black font-semibold" data-testid="title">
+                {item.title}
+              </p>
             </div>
             <div className="mt-2 mb-1 flex items-center justify-start mx-8">
-              <p className="">"{item.body}"</p>
+              <p className="" data-testid="body-post">
+                "{item.body}"
+              </p>
             </div>
             <p className="h-8 flex items-center justify-end ml-8 mx-8 font-semibold">
               {UserName(item, users)}
@@ -49,9 +56,19 @@ const ListPost = () => {
                         key={com.id}
                         className=" my-1 border rounded-lg bg-gray-200 p-2 px-4"
                       >
-                        <p className="text-black font-semibold">{com.email}</p>
+                        <p
+                          className="text-black font-semibold"
+                          data-testid="title"
+                        >
+                          {com.email}
+                        </p>
                         <span className="flex flex-col">
-                          <p className="text-gray-500 ml-2 my-1">{com.body}</p>
+                          <p
+                            className="text-gray-500 ml-2 my-1"
+                            data-testid="body-user"
+                          >
+                            {com.body}
+                          </p>
                         </span>
                       </span>
                     )
