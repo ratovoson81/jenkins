@@ -1,57 +1,40 @@
-import { useAppSelector } from "../../hooks";
-import { SpinnerCircular } from "spinners-react";
-import {
-  getPhotos,
-  UserCity,
-  UserName,
-  UserStreet,
-  UserSuite,
-} from "../../Utils";
-import { useAlbums } from "../../services/Album";
-import "../../css/style.css";
-import Gallery from "./Gallery";
+import React /*useState, useCallback*/ from "react";
+import Gallery from "react-photo-gallery";
+import { photos } from "./photos";
+//import Carousel, { Modal, ModalGateway } from "react-images";
 
 const ListAlbum = () => {
-  useAlbums();
-  const users = useAppSelector((state) => state.user.users);
-  const albums = useAppSelector((state) => state.album.album);
-  const photos = useAppSelector((state) => state.photo.photo);
+  /*const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };*/
 
   return (
-    <>
-      {albums.length === 0 && (
-        <div className="flex justify-center items-center mt-32">
-          <SpinnerCircular size="75" color="black" />
-        </div>
-      )}
-      <div className="flex justify-center">
-        <div className="grid grid-cols-2 gap-8 mt-8 mx-6 w-3/4 ">
-          {albums.map((item, i) => (
-            <figure
-              key={i}
-              className="md:flex bg-gray-100 rounded-lg p-8 md:p-0 md:h-40 shadow"
-            >
-              <Gallery idPost={item.id} />
-              <div className="md:p-4 text-center md:text-left ">
-                <blockquote>
-                  <p className="font-semibold">{item.title}</p>
-                </blockquote>
-                <div className="text-sm text-gray-500">
-                  {getPhotos(photos, item.id).length} photos
-                </div>
-                <figcaption className="pt-10 text-sm">
-                  <div className="">{UserName(item, users)}</div>
-                  <div className="text-gray-500">
-                    {UserStreet(item, users)}, {UserSuite(item, users)},{" "}
-                    {UserCity(item, users)}
-                  </div>
-                </figcaption>
-              </div>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </>
+    <div>
+      <Gallery photos={photos} /*onClick={openLightbox}*/ />
+      {/*<ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map((x) => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title,
+              }))}
+            />
+          </Modal>
+        ) : null}
+            </ModalGateway>*/}
+    </div>
   );
 };
 

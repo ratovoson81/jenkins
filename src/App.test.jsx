@@ -78,7 +78,7 @@ test("fetches todos", async () => {
   expect(axios.get).toHaveBeenCalledWith(`${URL_API}/todos`);
 });
 
-test("renders learn react link", () => {
+test("render text", () => {
   render(<App />);
   const linkElement = screen.getByText("Jenkins success");
   expect(linkElement).toBeInTheDocument();
