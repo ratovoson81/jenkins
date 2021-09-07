@@ -1,86 +1,104 @@
+import image0 from "../../assets/0.jfif";
+import image1 from "../../assets/1.jfif";
+import image2 from "../../assets/2.jfif";
+import image3 from "../../assets/3.jfif";
+import image4 from "../../assets/4.jfif";
+import image5 from "../../assets/5.jfif";
+import image6 from "../../assets/6.jfif";
+import image7 from "../../assets/7.jfif";
+import image8 from "../../assets/8.jfif";
+import image9 from "../../assets/9.jfif";
+import image10 from "../../assets/10.jfif";
+import image11 from "../../assets/11.jfif";
+import image12 from "../../assets/12.jfif";
+import image13 from "../../assets/13.jfif";
+import image14 from "../../assets/14.jfif";
+import image15 from "../../assets/15.jfif";
+import image16 from "../../assets/16.jfif";
+
 export const photos = [
   {
-    src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+    src: image0,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+    src: image1,
     width: 1,
     height: 1,
   },
   {
-    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+    src: image2,
     width: 3,
     height: 4,
   },
   {
-    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+    src: image3,
     width: 3,
     height: 4,
   },
   {
-    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
+    src: image4,
     width: 3,
     height: 4,
   },
   {
-    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
+    src: image5,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
+    src: image6,
     width: 3,
     height: 4,
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src: image7,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
+    src: image8,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/XiDA78wAZVw/600x799",
+    src: image9,
     width: 3,
     height: 4,
   },
   {
-    src: "https://source.unsplash.com/x8xJpClTvR0/800x599",
+    src: image10,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/u9cG4cuJ6bU/4927x1000",
+    src: image11,
     width: 4927,
     height: 1000,
   },
   {
-    src: "https://source.unsplash.com/qGQNmBE7mYw/800x599",
+    src: image12,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/NuO6iTBkHxE/800x599",
+    src: image13,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/pF1ug8ysTtY/600x400",
+    src: image14,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/A-fubu9QJxE/800x533",
+    src: image15,
     width: 4,
     height: 3,
   },
   {
-    src: "https://source.unsplash.com/5P91SF0zNsI/740x494",
+    src: image16,
     width: 4,
     height: 3,
   },
