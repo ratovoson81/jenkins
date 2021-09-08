@@ -3,7 +3,7 @@ import { URL_API } from "../constants/config";
 
 export async function getAllPost() {
   return await axios
-    .get(`${URL_API}/posts`)
+    .get(`${URL_API}/psts`)
     .then((res) => res.data)
     .catch((error) => error);
 }
