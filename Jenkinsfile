@@ -19,7 +19,7 @@ pipeline {
       steps {
         echo 'build'
         bat 'npm install'
-        bat 'npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9'
+        //bat 'npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9'
       }
     }
     stage('Test') {
@@ -56,7 +56,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-          bat 'npm install netlify-cli -g'
+          //bat 'npm install netlify-cli -g'
           bat 'npm run build'
           bat 'npx netlify deploy --dir=build --prod'
       }

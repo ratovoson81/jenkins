@@ -38,12 +38,12 @@ export default function Nav() {
                   >
                     Todos
                   </NavLink>
-                  {/*<NavLink
+                  <NavLink
                     to="/Albums"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Albums
-                  </NavLink>*/}
+                  </NavLink>
                 </div>
               </div>
             </div>
