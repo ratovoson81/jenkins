@@ -1,7 +1,7 @@
 import { useAuth } from "../../context/Auth";
 import { useToasts } from "react-toast-notifications";
 import { useProvideAuth } from "../../services/Auth";
-import {  useState } from "react";
+import { useState } from "react";
 import { useAppDispatch } from "../../hooks";
 import { setUserConnected } from "../../store/User";
 import { ThreeDots } from "../../css/threedots";
@@ -24,7 +24,7 @@ export default function Login() {
       if (result[0]) {
         auth.signin(() => {
           dispatch(setUserConnected(result[0]));
-          addToast("Bienvenue", {
+          addToast("Bienvenu", {
             appearance: "success",
             autoDismiss: true,
           });
