@@ -24,7 +24,7 @@ export default function Login() {
       if (result[0]) {
         auth.signin(() => {
           dispatch(setUserConnected(result[0]));
-          addToast("Bienvenu", {
+          addToast("Bienvenue", {
             appearance: "success",
             autoDismiss: true,
           });
